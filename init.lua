@@ -13,3 +13,7 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.cursorline = true
+
+require('packer').startup(function(use)
+  use 'h-hg/fcitx.nvim'
+end)
