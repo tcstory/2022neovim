@@ -21,4 +21,7 @@ require('packer').startup(function(use)
   use 'h-hg/fcitx.nvim'
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'kyazdani42/nvim-web-devicons'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 end)
+
+require('plugin-config.nvim-treesitter')
