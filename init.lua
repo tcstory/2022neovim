@@ -14,6 +14,13 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.cursorline = true
 
+
+vim.g.mapleader = ' '
+vim.keymap.set('n', '<Leader>j', '<C-w>j')
+vim.keymap.set('n', '<Leader>k', '<C-w>k')
+vim.keymap.set('n', '<Leader>h', '<C-w>h')
+vim.keymap.set('n', '<Leader>l', '<C-w>l')
+
 require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
