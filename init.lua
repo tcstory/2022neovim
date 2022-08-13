@@ -29,6 +29,21 @@ require('packer').startup(function(use)
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'kyazdani42/nvim-web-devicons'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+  --autocompletion
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+
+  -- lsp
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
 end)
 
 require('plugin-config.nvim-treesitter')
+require('lsp.setup')
