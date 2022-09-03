@@ -39,6 +39,11 @@ require('packer').startup(function(use)
   use {
     "nanozuki/tabby.nvim",
   }
+  use 'feline-nvim/feline.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+  }
 
   -- lsp
   use 'williamboman/mason.nvim'
@@ -61,4 +66,6 @@ require('plugin-config.nvim-treesitter')
 -- require('plugin-config.netrw')
 require('plugin-config.nvim-tree')
 require('plugin-config.tabby')
+require('plugin-config.feline')
+require('plugin-config.gitsigns')
 require('lsp.setup')
