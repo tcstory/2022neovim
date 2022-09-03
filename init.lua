@@ -29,6 +29,12 @@ require('packer').startup(function(use)
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'kyazdani42/nvim-web-devicons'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+  }
 
   -- lsp
   use 'williamboman/mason.nvim'
@@ -45,4 +51,6 @@ require('packer').startup(function(use)
 end)
 
 require('plugin-config.nvim-treesitter')
+-- require('plugin-config.netrw')
+require('plugin-config.nvim-tree')
 require('lsp.setup')
