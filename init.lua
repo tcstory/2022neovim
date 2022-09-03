@@ -35,6 +35,10 @@ require('packer').startup(function(use)
       'kyazdani42/nvim-web-devicons', -- optional, for file icons
     },
   }
+  use "EdenEast/nightfox.nvim"
+  use {
+    "nanozuki/tabby.nvim",
+  }
 
   -- lsp
   use 'williamboman/mason.nvim'
@@ -50,7 +54,11 @@ require('packer').startup(function(use)
   }
 end)
 
+-- theme
+vim.cmd("colorscheme carbonfox")
+
 require('plugin-config.nvim-treesitter')
 -- require('plugin-config.netrw')
 require('plugin-config.nvim-tree')
+require('plugin-config.tabby')
 require('lsp.setup')
