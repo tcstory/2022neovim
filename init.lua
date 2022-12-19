@@ -52,18 +52,30 @@ require('packer').startup(function(use)
     })
   end}
 
-  -- lsp
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-  use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
-  use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-  use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-  use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-  use 'L3MON4D3/LuaSnip' -- Snippets plugin
+  -- telescope start
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
   use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} },
+    config = function ()
+      require('telescope').load_extension('fzf')
+    end
   }
+-- telescope end
+
+-- lsp
+use 'williamboman/mason.nvim'
+use 'williamboman/mason-lspconfig.nvim'
+use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+use 'L3MON4D3/LuaSnip' -- Snippets plugin
+use {
+  "windwp/nvim-autopairs",
+  config = function() require("nvim-autopairs").setup {} end
+}
 end)
 
 -- theme
@@ -75,4 +87,5 @@ require('plugin-config.nvim-tree')
 require('plugin-config.tabby')
 require('plugin-config.feline')
 require('plugin-config.gitsigns')
+require('plugin-config.telescope')
 require('lsp.setup')
