@@ -45,6 +45,13 @@ require('packer').startup(function(use)
     -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
   }
 
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup({
+      open_mapping = [[<c-\>]],
+      direction = 'float'
+    })
+  end}
+
   -- lsp
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
