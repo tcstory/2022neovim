@@ -68,6 +68,13 @@ require('packer').startup(function(use)
   }
 -- telescope end
 
+-- markdown start
+  use {
+    'preservim/vim-markdown',
+    requires = { {'godlygeek/tabular'} }
+  }
+-- markdown end
+
 -- lsp
 use 'williamboman/mason.nvim'
 use 'williamboman/mason-lspconfig.nvim'
