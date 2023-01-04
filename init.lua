@@ -2,7 +2,12 @@ vim.cmd('syntax enable')
 
 vim.opt.number = true
 vim.opt.list = true
-vim.opt.listchars = 'extends:❯,precedes:❮,tab:▸ ,trail:˽'
+vim.opt.listchars = {
+  tab = "▸ ",
+  trail = "˽",
+  extends = "❯",
+  precedes = "❮",
+};
 vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.termguicolors = true
