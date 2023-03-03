@@ -48,6 +48,7 @@ require("lazy").setup({
     dependencies = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icons
     },
+    tag = 'nightly',
     config = function()
       require('plugin-config.nvim-tree')
     end
