@@ -39,6 +39,25 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- the colorscheme should be available when starting Neovim
+  {
+    "folke/tokyonight.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme tokyonight-moon]])
+    end,
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+    config = function()
+      require('plugin-config.lualine')
+    end
+  },
   'h-hg/fcitx.nvim',
   { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
   'kyazdani42/nvim-web-devicons',
@@ -51,12 +70,6 @@ require("lazy").setup({
     tag = 'nightly',
     config = function()
       require('plugin-config.nvim-tree')
-    end
-  },
-  {
-    'feline-nvim/feline.nvim',
-    config = function() 
-      require('plugin-config.feline')
     end
   },
   {
