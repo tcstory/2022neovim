@@ -96,5 +96,34 @@ require("lazy").setup({
     config = function ()
       require('plugin-config.telescope')
     end
+  },
+  {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup({}) end
+  },
+  -- lsp
+  {
+    "williamboman/mason.nvim"
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+  },
+  {
+    "neovim/nvim-lspconfig",
+  },
+  {
+      'hrsh7th/nvim-cmp', -- Autocompletion plugin
+  },
+  {
+'hrsh7th/cmp-nvim-lsp',-- LSP source for nvim-cmp
+  },
+  {
+'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
+    },
+  {
+'L3MON4D3/LuaSnip', -- Snippets plugin
   }
+  -- lsp end
 })
+
+require('lsp.setup')

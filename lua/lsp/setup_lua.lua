@@ -1,6 +1,6 @@
 local config = require('lsp.on_attach')
 
-require('lspconfig').sumneko_lua.setup({
+require('lspconfig').lua_ls.setup({
   on_attach = config.on_attach,
   flags = config.lsp_flags,
   settings = {
@@ -16,6 +16,8 @@ require('lspconfig').sumneko_lua.setup({
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true),
+        -- https://github.com/neovim/nvim-lspconfig/issues/1700
+        checkThirdParty = false, -- THIS IS THE IMPORTANT LINE TO ADD
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {
