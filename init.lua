@@ -122,6 +122,16 @@ require("lazy").setup({
   },
   {
     'L3MON4D3/LuaSnip', -- Snippets plugin
+  },
+  {
+    'folke/neodev.nvim',
+    config = function()
+      require("neodev").setup({
+        library = {
+          plugins = false
+        }
+      })
+    end
   }
   -- lsp end
 })
