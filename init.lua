@@ -61,7 +61,13 @@ require("lazy").setup({
   'h-hg/fcitx.nvim',
   { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
   'kyazdani42/nvim-web-devicons',
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  { 
+    'nvim-treesitter/nvim-treesitter', 
+    build = ':TSUpdate',
+    config = function ()
+      require('plugin-config.nvim-treesitter')
+    end
+  },
   {
     'kyazdani42/nvim-tree.lua',
     dependencies = {
