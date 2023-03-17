@@ -39,11 +39,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- the colorscheme should be available when starting Neovim
   {
-    dir = "~/Coding/neovim/auto-save.nvim",
-    config = function () 
-      require('auto-save').setup()
-    end
+    "folke/tokyonight.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      -- load the colorscheme here
+      vim.cmd([[colorscheme tokyonight-moon]])
+    end,
   },
   {
     'nvim-lualine/lualine.nvim',
