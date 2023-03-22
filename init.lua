@@ -48,7 +48,7 @@ require("lazy").setup({
     config = function()
       -- load the colorscheme here
       require("tokyonight").setup({
-        transparent = true
+        -- transparent = true,
       })
       vim.cmd([[colorscheme tokyonight-moon]])
     end,
