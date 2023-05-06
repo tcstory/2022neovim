@@ -20,10 +20,10 @@ vim.opt.cursorline = true
 
 
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<Leader>j', '<C-w>j')
-vim.keymap.set('n', '<Leader>k', '<C-w>k')
-vim.keymap.set('n', '<Leader>h', '<C-w>h')
-vim.keymap.set('n', '<Leader>l', '<C-w>l')
+--vim.keymap.set('n', '<Leader>j', '<C-w>j')
+--vim.keymap.set('n', '<Leader>k', '<C-w>k')
+--vim.keymap.set('n', '<Leader>h', '<C-w>h')
+--vim.keymap.set('n', '<Leader>l', '<C-w>l')
 vim.keymap.set('n', 'q:', "")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -62,7 +62,6 @@ require("lazy").setup({
       require('plugin-config.lualine')
     end
   },
-  'h-hg/fcitx.nvim',
   { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
   'kyazdani42/nvim-web-devicons',
   { 
@@ -139,16 +138,6 @@ require("lazy").setup({
   {
     'L3MON4D3/LuaSnip', -- Snippets plugin
   },
-  {
-    'folke/neodev.nvim',
-    config = function()
-      require("neodev").setup({
-        library = {
-          plugins = false
-        }
-      })
-    end
-  }
   -- lsp end
 })
 

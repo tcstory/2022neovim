@@ -2,6 +2,8 @@ require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = { 
       "lua_ls", 
+      "volar",
+      "tsserver"
     }
 })
 
@@ -11,6 +13,8 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- config lsp
 
 require("lsp.setup_lua")
+require("lsp.setup_vue")
+require("lsp.setup_ts")
 
 -- luasnip setup
 local luasnip = require 'luasnip'
