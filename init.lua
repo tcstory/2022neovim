@@ -62,7 +62,15 @@ require("lazy").setup({
       require('plugin-config.lualine')
     end
   },
-  { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
+  { 
+    lazy = true,
+    'sindrets/diffview.nvim', 
+    dependencies = 'nvim-lua/plenary.nvim',
+    cmd = {
+      "DiffviewFileHistory",
+      "DiffviewOpen"
+    }
+  },
   'kyazdani42/nvim-web-devicons',
   { 
     'nvim-treesitter/nvim-treesitter', 
@@ -75,6 +83,11 @@ require("lazy").setup({
     'kyazdani42/nvim-tree.lua',
     dependencies = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icons
+    },
+    lazy = true,
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    keys = {
+      {'<Leader>1'}
     },
     tag = 'nightly',
     config = function()
