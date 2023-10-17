@@ -73,13 +73,6 @@ require("lazy").setup({
     }
   },
   'kyazdani42/nvim-web-devicons',
-  { 
-    'nvim-treesitter/nvim-treesitter', 
-    build = ':TSUpdate',
-    config = function ()
-      require('plugin-config.nvim-treesitter')
-    end
-  },
   {
     'kyazdani42/nvim-tree.lua',
     dependencies = {
@@ -130,29 +123,5 @@ require("lazy").setup({
       require('Comment').setup()
     end
   },
-  -- lsp
-  {
-    "williamboman/mason.nvim"
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-  },
-  {
-    "neovim/nvim-lspconfig",
-  },
-  {
-    'hrsh7th/nvim-cmp', -- Autocompletion plugin
-  },
-  {
-    'hrsh7th/cmp-nvim-lsp',-- LSP source for nvim-cmp
-  },
-  {
-    'saadparwaiz1/cmp_luasnip', -- Snippets source for nvim-cmp
-  },
-  {
-    'L3MON4D3/LuaSnip', -- Snippets plugin
-  },
-  -- lsp end
 })
 
-require('lsp.setup')
