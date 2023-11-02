@@ -123,5 +123,6 @@ require("lazy").setup({
       require('Comment').setup()
     end
   },
+  "h-hg/fcitx.nvim"
 })
 
