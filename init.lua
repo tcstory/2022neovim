@@ -123,6 +123,28 @@ require("lazy").setup({
       require('Comment').setup()
     end
   },
-  "h-hg/fcitx.nvim"
+  "h-hg/fcitx.nvim",
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    -- tag = "*",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.dirman"] = { -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                notes = "~/Coding/org-note/neorg",
+              },
+            },
+          },
+        },
+      }
+    end,
+  },
 })
 
